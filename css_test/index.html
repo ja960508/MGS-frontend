@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">프론트엔드 모의고사(HTML, CSS 영역)</h1>
+    <article class="question">
+      <div class="question__container">
+        <strong>1.</strong><br />
+        h1 태그는 문서를 대표하는 단어에 사용된다. 가장 높은 중요도를 나타내는
+        h1 태그는 한 번 밖에 사용할 수 없다. (맞으면 O, 틀리면 X)
+      </div>
+      <div class="answer__container answer0">
+        <input type="radio" name="answer0" id="answer0_correct" />
+        <label for="answer0_correct">O</label>
+        <input type="radio" name="answer0" id="answer0_wrong" />
+        <label for="answer0_wrong">X</label>
+      </div>
+    </article>
+    <article class="question">
+      <div class="question__container">
+        <strong>2.</strong><br />
+        텍스트만을 컨텐츠로 가지는 요소는 height를 설정해주지 않으면 자동으로
+        설정된다. 이때 높이는 font-size로 결정된다.(맞으면 O 틀리면 X)
+      </div>
+      <div class="answer__container answer1">
+        <input type="radio" name="answer1" id="answer1_correct" />
+        <label for="answer1_correct">O</label>
+        <input type="radio" name="answer1" id="answer1_wrong" />
+        <label for="answer1_wrong">X</label>
+      </div>
+    </article>
+    <article class="question">
+      <div class="question__container">
+        <strong>3.</strong><br />
+        box-sizing을 content-box로 지정했을 때 해당 박스의 크기는 border,
+        padding, content의 크기를 모두 포함하여 계산된다. (맞으면 O, 틀리면 X)
+      </div>
+      <div class="answer__container answer2">
+        <input type="radio" name="answer2" id="answer2_correct" />
+        <label for="answer2_correct">O</label>
+        <input type="radio" name="answer2" id="answer2_wrong" />
+        <label for="answer2_wrong">X</label>
+      </div>
+    </article>
+    <article class="question">
+      <div class="question__container">
+        <strong>4.</strong><br />
+        다음과 같은 html, css 파일이 있을 때 이미지 태그와 div 태그 사이에 생긴
+        공백을 없애려고 한다. 주어진 css 파일을 보고 vertical-align에 어떤 값이
+        들어가야 하는지 구하시오.
+        <div>
+          <pre class="codeblock">
+&ltdiv class="mother"&gt
+  &ltimg src="image1.png" alt="sample" class="sample" /&gt 
+  &ltdiv class="child"&gt&lt/div&gt 
+&lt/div&gt
+          </pre>
+          <pre class="codeblock">
+.mother {
+  width: 280px;
+  margin-bottom: 1rem;
+}
+
+.child {
+  width: 100%;
+  height: 50px;
+  background-color: cornflowerblue;
+}
+
+.sample {
+  vertical-align: [???];
+}
+
+          </pre>
+          <div class="mother">
+            <img src="./images/Image1.png" alt="sample" class="sample" />
+            <div class="child"></div>
+          </div>
+          <div class="mother">
+            <img
+              src="./images/Image1.png"
+              alt="sample"
+              class="sample"
+              style="vertical-align: top"
+            />
+            <div class="child"></div>
+          </div>
+        </div>
+      </div>
+      <div class="answer__container">
+        <input
+          type="text"
+          style="padding: 1rem; font-size: 1.2rem"
+          placeholder="정답은?"
+        />
+      </div>
+    </article>
+
+    <article class="question">
+      <div class="question__container">
+        <strong>4.</strong><br />
+        다음과 같은 html, css 파일이 있을 때 div에 포함된 이미지를 고려해
+        border-radius를 설정하려고 한다. 주어진 CSS 파일을 보고 overflow에 어떤
+        값이 들어가야 하는지 구하시오.
+        <div>
+          <pre class="codeblock">
+&ltdiv class="mother"&gt
+  &ltimg src="image1.png" alt="sample" class="sample" /&gt 
+&lt/div&gt
+          </pre>
+          <pre class="codeblock">
+.mother {
+  width: 280px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  overflow: [????];
+}
+
+.sample {
+  width: 100%;
+}
+
+          </pre>
+          <div class="mother" style="overflow: hidden; border-radius: 50%">
+            <img src="./images/Image1.png" alt="sample" class="sample" />
+          </div>
+          <div class="mother">
+            <img
+              src="./images/Image1.png"
+              alt="sample"
+              class="sample"
+              style="width: 100%"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="answer__container">
+        <input
+          type="text"
+          style="padding: 1rem; font-size: 1.2rem"
+          placeholder="정답은?"
+        />
+      </div>
+    </article>
+
+    <div class="answer_box">
+      <input
+        type="checkbox"
+        name="open_answer"
+        id="open_answer"
+        style="display: none"
+      />
+      <label for="open_answer">Click, if u wanna see answer</label>
+      <ol class="answer_list">
+        <li>X, 여러 번 사용 가능하다.</li>
+        <li>X, line-height로 결정된다.</li>
+        <li>O</li>
+        <li>top</li>
+        <li>hidden</li>
+      </ol>
+    </div>
+  </body>
+</html>
