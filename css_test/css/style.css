@@ -11,12 +11,12 @@
   border-bottom: 2px solid rgb(189, 189, 189);
 }
 .question__container {
-  flex: 1 1 50%;
+  flex: 1 1 80%;
   padding: 1rem;
 }
 
 .answer__container {
-  flex: 1 1 50%;
+  flex: 1 1 20%;
   display: flex;
   align-items: center;
 }
