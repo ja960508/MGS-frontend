@@ -1,12 +1,15 @@
-const str = `
-010-1234-5678
-ja960508@gmail.com
-https://jsonplaceholder.typicode.com/todos/
-abbbcccdddd
-Good Afternoon, Good Evening and Good Night
-`;
+const readline = require("readline");
 
-const regexp = new RegExp("good", "gi");
-const reglit = /Good/gi;
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-console.log(str.match(regexp));
+const input = [];
+
+rl.on("line", function (line) {
+  input.push(line);
+}).on("close", function () {
+  input.forEach((i) => console.log(i));
+  process.exit();
+});
