@@ -1,0 +1,25 @@
+{
+  "name": "part8_parcel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/plugin-transform-runtime": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "autoprefixer": "9",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "postcss": "^8.4.13"
+  },
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "staticFiles": {
+    "staticPath": "statics"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
