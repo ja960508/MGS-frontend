@@ -1,8 +1,4 @@
-console.log("hello");
+import User from "./user.js";
 
-async function test() {
-  const promise = Promise.resolve(123);
-  console.log(await promise);
-}
-
-test();
+console.log(User);
+User.sayHi();
