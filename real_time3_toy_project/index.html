@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.scss" />
+    <script defer src="./js/main.js"></script>
+    <script defer src="./js/fetch.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="statusbar"></div>
+      <header class="account__meta">
+        <a href="javascript:void(0)" class="profile"></a>
+        <h2 class="account__title">생활비</h2>
+        <div class="header__icons">
+          <img src="./images/simple_pay_icon.svg" alt="simplePayIcon" />
+          <img src="./images/search_icon.svg" alt="searchIcon" />
+        </div>
+      </header>
+      <main class="account__main">
+        <div class="account__info">
+          <header>
+            <h3 class="account__number">155-2635-2927</h3>
+            <button class="transfer">이체</button>
+          </header>
+          <strong class="account__balance">240,393원</strong>
+          <div class="account__manage">
+            <input class="account__bar" type="range" />
+            <a href="javascript:void(0)" class="chart"></a>
+          </div>
+          <p>5일 동안 <span class="limit">210,000</span>원 남음</p>
+        </div>
+        <p class="loan">
+          지금 낮은 이자로 생활대출 신청!
+          <a href="javascript:void(0)">Go</a>
+        </p>
+      </main>
+      <section class="account__log">
+        <button class="shutter"></button>
+        <ul class="piggybank">
+          <li class="piggybank__item">
+            <p>모니터 사자!</p>
+            <span>20,000원</span>
+          </li>
+          <li class="piggybank__item">
+            <p>애플워치!</p>
+            <span>20,000원</span>
+          </li>
+          <li class="piggybank__item">
+            <a href="javascript:void(0)">
+              <img src="./images/add_icon.svg" alt="add" /> 저금통 만들기
+            </a>
+          </li>
+        </ul>
+        <ol>
+          <li class="daily__log">
+            <header class="daily__info">
+              <span class="daily__day">오늘</span>
+              <span class="daily__total">73,000원</span>
+            </header>
+            <ul>
+              <li><span>치킨</span><span>20,000원</span></li>
+              <li><span>피자</span><span>20,000원</span></li>
+              <li><span>택시비</span><span>20,000원</span></li>
+              <li><span>이주암</span><span>20,000원</span></li>
+            </ul>
+          </li>
+          <li class="daily__log">
+            <header class="daily__info">
+              <span class="daily__day">어제</span>
+              <span class="daily__total">173,000원</span>
+            </header>
+            <ul>
+              <li><span>치킨</span><span>20,000원</span></li>
+              <li><span>피자</span><span>20,000원</span></li>
+              <li><span>택시비</span><span>20,000원</span></li>
+              <li><span>이주암</span><span>20,000원</span></li>
+            </ul>
+          </li>
+          <li class="daily__log">
+            <header class="daily__info">
+              <span class="daily__day">2일 전</span>
+              <span class="daily__total">273,000원</span>
+            </header>
+            <ul>
+              <li><span>치킨</span><span>20,000원</span></li>
+              <li><span>피자</span><span>20,000원</span></li>
+              <li><span>택시비</span><span>20,000원</span></li>
+              <li><span>이주암</span><span>20,000원</span></li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+      <nav class="nav__bar">
+        <a href="javascript:void(0)" class="home"></a>
+        <a href="javascript:void(0)" class="arrows"></a>
+        <a href="javascript:void(0)" class="chat"></a>
+        <a href="javascript:void(0)" class="etc"></a>
+      </nav>
+    </div>
+  </body>
+</html>

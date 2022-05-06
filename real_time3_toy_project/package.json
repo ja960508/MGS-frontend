@@ -1,0 +1,18 @@
+{
+  "name": "real_time3_toy_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ja960508/MGS-Toy-project-JS",
+  "author": "jooam <lord0325@naver.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "devDependencies": {
+    "sass": "^1.51.0"
+  }
+}
