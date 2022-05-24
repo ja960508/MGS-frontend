@@ -36,11 +36,16 @@ a:visited {
   color: #000;
 }
 
-// .wrapper {
-//   max-height: 680px;
-// }
+.wrapper {
+  height: 100vh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 375px;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
-// HEADER
 .statusbar {
   width: 100%;
   height: 44px;
@@ -48,238 +53,9 @@ a:visited {
   background-repeat: no-repeat;
   background-size: contain;
 }
-
-.account__meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 21px;
-
-  .profile {
-    width: 43px;
-    height: 43px;
-    background-image: url("../images/avatar.svg");
-  }
-
-  .account__title {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
-  }
-
-  .header__icons {
-    display: flex;
-    align-items: center;
-
-    img {
-      margin-right: 18px;
-    }
-    img:last-child {
-      margin-right: 0;
-    }
-  }
-}
-
-// MAIN
-.account__main {
-  padding-top: 21px;
-  text-align: center;
-
-  .account__info {
-    width: 75%;
-    margin: 0 auto;
-    margin-bottom: 24px;
-    background-color: #fff;
-    box-shadow: 0px 0px 16px rgba(226, 191, 66, 0.19);
-    border-radius: 12px;
-    padding-top: 14px;
-    padding-bottom: 6px;
-
-    .account__number,
-    p {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 21px;
-      color: #858585;
-    }
-
-    header {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      margin-bottom: 16px;
-
-      button {
-        all: unset;
-        position: absolute;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 21px;
-        cursor: pointer;
-        right: 17px;
-      }
-    }
-
-    .account__balance {
-      display: block;
-      font-weight: 500;
-      font-size: 24px;
-      line-height: 36px;
-      color: #000;
-      margin-bottom: 16px;
-    }
-
-    .account__manage {
-      position: relative;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .chart {
-        position: absolute;
-        top: 0;
-        right: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 24px;
-        height: 24px;
-        background-image: url("../images/chart_icon.svg");
-        background-repeat: no-repeat;
-      }
-    }
-  }
-
-  .loan {
-    margin-bottom: 14px;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 21px;
-    color: #000000;
-
-    a {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 21px;
-      text-decoration-line: underline;
-    }
-  }
-}
-
-.account__log {
-  background-color: #f5f5f5;
-  box-shadow: 0px -5px 14px rgba(189, 144, 28, 0.08);
-  border-radius: 30px 30px 0px 0px;
-  position: relative;
-  padding: 4px 30px 17px;
-
-  .shutter {
-    display: block;
-    margin: 0 auto;
-    outline: none;
-    border: none;
-    height: 4px;
-    width: 60px;
-    background-color: #c4c4c4;
-    border-radius: 4px;
-    margin-bottom: 16px;
-  }
-
-  .piggybank {
-    display: flex;
-    width: 100%;
-    overflow-x: scroll;
-    margin-bottom: 17px;
-
-    .piggybank__item {
-      flex-basis: 162px;
-      flex-shrink: 0;
-      height: 47px;
-      border-radius: 6px;
-      margin-right: 13px;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 18px;
-      color: #fff;
-      padding: 5px 0 7px 13px;
-      background: linear-gradient(to left, #dadada 50%, #ff5f00 50%);
-    }
-    .piggybank__item:last-child {
-      background: none;
-      font-weight: 500;
-      font-size: 12px;
-      line-height: 18px;
-      display: flex;
-      align-items: center;
-      margin-right: 0;
-      a {
-        display: flex;
-        align-items: center;
-        color: #ff5f00;
-
-        img {
-          margin-right: 6px;
-        }
-      }
-    }
-  }
-
-  .piggybank::-webkit-scrollbar {
-    display: none;
-  }
-
-  ol {
-    overflow-y: scroll;
-    height: 294px;
-
-    .daily__log {
-      margin-bottom: 38px;
-
-      .daily__info {
-        .daily__day {
-          font-weight: 700;
-          font-size: 14px;
-          line-height: 21px;
-          color: #000000;
-        }
-        .daily__total {
-          float: right;
-          font-weight: 500;
-          font-size: 14px;
-          line-height: 21px;
-          color: #b4b4b4;
-        }
-      }
-
-      ul {
-        font-size: 18px;
-        line-height: 27px;
-        color: #444444;
-
-        li {
-          border-bottom: 1px solid #dcdcdc;
-          padding: 8px 0;
-
-          span:first-child {
-            font-weight: 400;
-          }
-
-          span:last-child {
-            float: right;
-            font-weight: 300;
-          }
-        }
-      }
-    }
-
-    .daily__log:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
 .nav__bar {
+  position: absolute;
+  bottom: 0;
   width: 100%;
   height: 76px;
   background: linear-gradient(163.63deg, #00bdb2 11.35%, #c4e7b8 139.96%);
@@ -310,5 +86,472 @@ a:visited {
     height: 28px;
     background-image: url("../images/navbar_icons/Glyph_etc.svg");
     background-repeat: none;
+  }
+}
+
+.home {
+  // HEADER
+  .account__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 21px;
+
+    .profile {
+      width: 43px;
+      height: 43px;
+      background-image: url("../images/avatar.svg");
+    }
+
+    .account__title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    .header__icons {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 18px;
+      }
+      img:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // MAIN
+  .slider {
+    display: flex;
+    .account {
+      flex: 1 0 100%;
+      position: relative;
+      height: calc(100vh - 44px);
+    }
+  }
+
+  .account__main {
+    padding-top: 21px;
+    text-align: center;
+
+    .account__info {
+      width: 75%;
+      margin: 0 auto;
+      margin-bottom: 24px;
+      background-color: #fff;
+      box-shadow: 0px 0px 16px rgba(226, 191, 66, 0.19);
+      border-radius: 12px;
+      padding-top: 14px;
+      padding-bottom: 6px;
+
+      .account__number,
+      p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: #858585;
+      }
+
+      header {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        margin-bottom: 16px;
+
+        button {
+          all: unset;
+          position: absolute;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 21px;
+          cursor: pointer;
+          right: 17px;
+        }
+      }
+
+      .account__balance {
+        display: block;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 36px;
+        color: #000;
+        margin-bottom: 16px;
+      }
+
+      .account__manage {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .account__bar {
+          all: unset;
+          width: 72%;
+          height: 6px;
+          border-radius: 3px;
+        }
+        .account__bar::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          background: #ff5f00;
+          border: 2px solid #ffffff;
+          border-radius: 2px;
+          cursor: pointer;
+          width: 8px;
+          height: 17px;
+        }
+
+        .chart {
+          position: relative;
+          left: 7px;
+          width: 24px;
+          height: 24px;
+          background-image: url("../images/chart_icon.svg");
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    .loan {
+      margin-bottom: 14px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: #000000;
+
+      a {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        text-decoration-line: underline;
+      }
+    }
+  }
+
+  .account__log {
+    background-color: #f5f5f5;
+    box-shadow: 0px -5px 14px rgba(189, 144, 28, 0.08);
+    border-radius: 30px 30px 0px 0px;
+    width: 100%;
+    bottom: 76px;
+    position: absolute;
+    padding: 4px 30px 17px;
+
+    .shutter {
+      display: block;
+      margin: 0 auto;
+      outline: none;
+      border: none;
+      height: 4px;
+      width: 60px;
+      background-color: #c4c4c4;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      cursor: pointer;
+    }
+
+    .piggybank {
+      display: flex;
+      width: 100%;
+      overflow-x: scroll;
+      margin-bottom: 17px;
+
+      .piggybank__item {
+        flex-basis: 162px;
+        flex-shrink: 0;
+        height: 47px;
+        border-radius: 6px;
+        margin-right: 13px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        color: #fff;
+        padding: 5px 0 7px 13px;
+      }
+      .piggybank__item:last-child {
+        background: none;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        margin-right: 0;
+        a {
+          display: flex;
+          align-items: center;
+          color: #ff5f00;
+
+          img {
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+
+    .piggybank::-webkit-scrollbar {
+      display: none;
+    }
+
+    ol {
+      overflow-y: scroll;
+      height: 184px;
+
+      .daily__log {
+        margin-bottom: 38px;
+
+        .daily__info {
+          .daily__day {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 21px;
+            color: #000000;
+          }
+          .daily__total {
+            float: right;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 21px;
+            color: #b4b4b4;
+          }
+          .daily__total.plus {
+            color: #ff5f00;
+          }
+        }
+
+        ul {
+          font-size: 18px;
+          line-height: 27px;
+          color: #444444;
+
+          li {
+            border-bottom: 1px solid #dcdcdc;
+            padding: 8px 0;
+
+            span:first-child {
+              font-weight: 400;
+            }
+
+            span:last-child {
+              float: right;
+              font-weight: 300;
+            }
+            span:last-child.in {
+              &::before {
+                content: "+";
+              }
+              color: #ff5f00;
+            }
+          }
+        }
+      }
+
+      .daily__log:last-child {
+        margin-bottom: 0;
+      }
+    }
+    ol::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.expense__management {
+  background-color: #ffffff;
+  z-index: 1;
+  height: 0;
+  bottom: 0;
+  transition: height 0.5s;
+
+  .header {
+    position: relative;
+    padding: 33px 0 12px 30px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+
+    button {
+      all: unset;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: 13px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+  .main {
+    overflow: scroll;
+    padding: 0 37px 0 30px;
+
+    .amount__container {
+      margin-bottom: 59px;
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4px;
+
+        span:first-child {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 27px;
+          color: #444444;
+        }
+
+        span:last-child {
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 36px;
+          color: #ff5f00;
+        }
+      }
+
+      .amount__bar {
+        all: unset;
+        width: 100%;
+        height: 6px;
+        border-radius: 3px;
+        background: linear-gradient(to left, #c4c4c4 50%, #ffdb4c 50%);
+      }
+      .amount__bar::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: #ff5f00;
+        border: 2px solid #ffffff;
+        border-radius: 2px;
+        cursor: pointer;
+        width: 8px;
+        height: 17px;
+      }
+    }
+
+    .daily__report {
+      margin-bottom: 46px;
+
+      div {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        color: #444444;
+        margin-bottom: 17px;
+      }
+
+      #daily__report {
+        width: 462px;
+      }
+    }
+
+    .expense__pattern {
+      div {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        color: #444444;
+        margin-bottom: 18px;
+      }
+
+      .expense__pattern__log {
+        margin-top: 14px;
+
+        li {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 16px;
+
+          .log__meta {
+            display: flex;
+            align-items: center;
+            margin: 0;
+            img {
+              width: 30px;
+              margin-right: 21px;
+            }
+          }
+
+          .log__price {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 27px;
+            color: #858585;
+          }
+        }
+      }
+    }
+  }
+
+  .main::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.transfer {
+  background-color: #ffffff;
+  bottom: 0;
+  z-index: 1;
+  height: 0;
+  transition: height 0.3s;
+
+  .header {
+    position: relative;
+    padding: 33px 0 12px 30px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+
+    button {
+      all: unset;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: 13px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  .main {
+    padding-top: 33px;
+    overflow: scroll;
+    .user__list {
+      padding: 0 37px 0 30px;
+
+      .user__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 17px;
+
+        .user__meta {
+          margin-left: 14px;
+          flex: 1 1 90%;
+          .user__meta__name {
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 27px;
+          }
+          .user__meta__account {
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+            color: #444444;
+          }
+        }
+
+        .favorite {
+          all: unset;
+          width: 28px;
+          height: 24px;
+          background-image: url("../images/star.svg");
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .main::-webkit-scrollbar {
+    display: none;
   }
 }

@@ -1,0 +1,107 @@
+.account__main {
+  padding-top: 21px;
+  text-align: center;
+  padding-bottom: 14px;
+
+  .account__info {
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 24px;
+    background-color: #fff;
+    box-shadow: 0px 0px 16px rgba(226, 191, 66, 0.19);
+    border-radius: 12px;
+    padding-top: 14px;
+    padding-bottom: 6px;
+
+    .account__number,
+    p {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: #858585;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 16px;
+
+      button {
+        all: unset;
+        position: absolute;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        cursor: pointer;
+        right: 17px;
+      }
+    }
+
+    .account__balance {
+      display: block;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 36px;
+      color: #000;
+      margin-bottom: 16px;
+    }
+
+    .account__manage {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .account__bar {
+        all: unset;
+        width: 72%;
+        height: 6px;
+        border-radius: 3px;
+      }
+      .account__bar::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: #ff5f00;
+        border: 2px solid #ffffff;
+        border-radius: 2px;
+        cursor: pointer;
+        width: 8px;
+        height: 17px;
+      }
+
+      .chart {
+        position: relative;
+        left: 7px;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+
+        span {
+          overflow: hidden;
+          display: inline-block;
+          position: relative;
+          z-index: -1;
+          border: 0;
+          width: 1px;
+          height: 1px;
+          clip: rect(1px, 1px, 1px, 1px);
+          clip-path: inset(50%);
+        }
+      }
+    }
+  }
+
+  .loan {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+
+    a {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      text-decoration-line: underline;
+    }
+  }
+}

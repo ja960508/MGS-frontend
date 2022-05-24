@@ -10,94 +10,239 @@
     />
     <link rel="stylesheet" href="./styles/style.scss" />
     <script defer src="./js/main.js"></script>
-    <script defer src="./js/fetch.js"></script>
+    <script defer src="./js/management.js"></script>
+    <script defer src="./js/transfer.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper home">
       <div class="statusbar"></div>
-      <header class="account__meta">
-        <a href="javascript:void(0)" class="profile"></a>
-        <h2 class="account__title">생활비</h2>
-        <div class="header__icons">
-          <img src="./images/simple_pay_icon.svg" alt="simplePayIcon" />
-          <img src="./images/search_icon.svg" alt="searchIcon" />
-        </div>
-      </header>
-      <main class="account__main">
-        <div class="account__info">
-          <header>
-            <h3 class="account__number">155-2635-2927</h3>
-            <button class="transfer">이체</button>
+      <div class="slider">
+        <div class="account" data-account-id="0">
+          <header class="account__meta">
+            <a href="javascript:void(0)" class="profile"></a>
+            <h2 class="account__title"></h2>
+            <div class="header__icons">
+              <img src="./images/simple_pay_icon.svg" alt="simplePayIcon" />
+              <img src="./images/search_icon.svg" alt="searchIcon" />
+            </div>
           </header>
-          <strong class="account__balance">240,393원</strong>
-          <div class="account__manage">
-            <input class="account__bar" type="range" />
-            <a href="javascript:void(0)" class="chart"></a>
-          </div>
-          <p>5일 동안 <span class="limit">210,000</span>원 남음</p>
+          <main class="account__main">
+            <div class="account__info">
+              <header>
+                <h3 class="account__number"></h3>
+                <button class="transfer__btn">이체</button>
+              </header>
+              <strong class="account__balance"></strong>
+              <div class="account__manage">
+                <input class="account__bar" type="range" />
+                <a href="javascript:void(0)" class="chart"></a>
+              </div>
+              <p>5일 동안 <span class="limit">210,000</span>원 남음</p>
+            </div>
+            <p class="loan">
+              지금 낮은 이자로 생활대출 신청!
+              <a href="javascript:void(0)">Go</a>
+            </p>
+          </main>
+          <section class="account__log">
+            <button class="shutter"></button>
+            <ul class="piggybank">
+              <li class="piggybank__item">
+                <a href="javascript:void(0)">
+                  <img src="./images/add_icon.svg" alt="add" /> 저금통 만들기
+                </a>
+              </li>
+            </ul>
+            <ol class="daily__log__list"></ol>
+          </section>
         </div>
-        <p class="loan">
-          지금 낮은 이자로 생활대출 신청!
-          <a href="javascript:void(0)">Go</a>
-        </p>
+      </div>
+      <nav class="nav__bar">
+        <a href="javascript:void(0)" class="home"></a>
+        <a href="javascript:void(0)" class="arrows"></a>
+        <a href="javascript:void(0)" class="chat"></a>
+        <a href="javascript:void(0)" class="etc"></a>
+      </nav>
+    </div>
+    <div class="wrapper expense__management">
+      <div class="statusbar"></div>
+      <header class="header">
+        <span>지출 관리</span>
+        <button class="btn__close">닫기</button>
+      </header>
+      <main class="main">
+        <div class="expense__management__amount">
+          <div class="amount__container">
+            <div class="meta">
+              <span>기준 금액 설정</span>
+              <span>2,100,100원</span>
+            </div>
+            <input class="amount__bar" type="range" />
+          </div>
+          <div class="daily__report">
+            <div>일간 리포트</div>
+            <canvas id="daily__report__line"> </canvas>
+          </div>
+          <div class="expense__pattern">
+            <div class="expense__pattern__chart">
+              <div>6월 지출 패턴</div>
+              <canvas id="daily__report__donut"> </canvas>
+            </div>
+            <ul class="expense__pattern__log">
+              <li>
+                <div class="log__meta">
+                  <img src="./images/management_icons/car.svg" alt="car" />
+                  <span class="log__name">주유비</span>
+                </div>
+                <span class="log__price">56,000원</span>
+              </li>
+              <li>
+                <div class="log__meta">
+                  <img
+                    src="./images/management_icons/health.svg"
+                    alt="health"
+                  />
+                  <span class="log__name">건강관리비</span>
+                </div>
+                <span class="log__price">80,000원</span>
+              </li>
+              <li>
+                <div class="log__meta">
+                  <img
+                    src="./images/management_icons/dining.svg"
+                    alt="dining"
+                  />
+                  <span class="log__name">외식비</span>
+                </div>
+                <span class="log__price">233,000원</span>
+              </li>
+              <li>
+                <div class="log__meta">
+                  <img
+                    src="./images/management_icons/bucket.svg"
+                    alt="bucket"
+                  />
+                  <span class="log__name">장보기</span>
+                </div>
+                <span class="log__price">390,000원</span>
+              </li>
+              <li>
+                <div class="log__meta">
+                  <img src="./images/management_icons/store.svg" alt="store" />
+                  <span class="log__name">상점</span>
+                </div>
+                <span class="log__price">46,000원</span>
+              </li>
+            </ul>
+          </div>
+        </div>
       </main>
-      <section class="account__log">
-        <button class="shutter"></button>
-        <ul class="piggybank">
-          <li class="piggybank__item">
-            <p>모니터 사자!</p>
-            <span>20,000원</span>
+      <nav class="nav__bar">
+        <a href="javascript:void(0)" class="home"></a>
+        <a href="javascript:void(0)" class="arrows"></a>
+        <a href="javascript:void(0)" class="chat"></a>
+        <a href="javascript:void(0)" class="etc"></a>
+      </nav>
+    </div>
+    <div class="wrapper transfer">
+      <div class="statusbar"></div>
+      <header class="header">
+        <span>이체</span>
+        <button class="btn__close">닫기</button>
+      </header>
+      <div class="main">
+        <ul class="user__list">
+          <li class="user__item">
+            <img src="./images/avatar.svg" alt="avatar" />
+            <div class="user__meta">
+              <div class="user__meta__name">이주암</div>
+              <div class="user__meta__account">757301-00-068022</div>
+            </div>
+            <button class="favorite"></button>
           </li>
-          <li class="piggybank__item">
-            <p>애플워치!</p>
-            <span>20,000원</span>
+          <li class="user__item">
+            <img src="./images/avatar.svg" alt="avatar" />
+            <div class="user__meta">
+              <div class="user__meta__name">이주암</div>
+              <div class="user__meta__account">757301-00-068022</div>
+            </div>
+            <button class="favorite"></button>
           </li>
-          <li class="piggybank__item">
-            <a href="javascript:void(0)">
-              <img src="./images/add_icon.svg" alt="add" /> 저금통 만들기
-            </a>
+          <li class="user__item">
+            <img src="./images/avatar.svg" alt="avatar" />
+            <div class="user__meta">
+              <div class="user__meta__name">이주암</div>
+              <div class="user__meta__account">757301-00-068022</div>
+            </div>
+            <button class="favorite"></button>
+          </li>
+          <li class="user__item">
+            <img src="./images/avatar.svg" alt="avatar" />
+            <div class="user__meta">
+              <div class="user__meta__name">이주암</div>
+              <div class="user__meta__account">757301-00-068022</div>
+            </div>
+            <button class="favorite"></button>
+          </li>
+          <li class="user__item">
+            <img src="./images/avatar.svg" alt="avatar" />
+            <div class="user__meta">
+              <div class="user__meta__name">이주암</div>
+              <div class="user__meta__account">757301-00-068022</div>
+            </div>
+            <button class="favorite"></button>
+          </li>
+          <li class="user__item">
+            <img src="./images/avatar.svg" alt="avatar" />
+            <div class="user__meta">
+              <div class="user__meta__name">이주암</div>
+              <div class="user__meta__account">757301-00-068022</div>
+            </div>
+            <button class="favorite"></button>
+          </li>
+          <li class="user__item">
+            <img src="./images/avatar.svg" alt="avatar" />
+            <div class="user__meta">
+              <div class="user__meta__name">이주암</div>
+              <div class="user__meta__account">757301-00-068022</div>
+            </div>
+            <button class="favorite"></button>
+          </li>
+          <li class="user__item">
+            <img src="./images/avatar.svg" alt="avatar" />
+            <div class="user__meta">
+              <div class="user__meta__name">이주암</div>
+              <div class="user__meta__account">757301-00-068022</div>
+            </div>
+            <button class="favorite"></button>
+          </li>
+          <li class="user__item">
+            <img src="./images/avatar.svg" alt="avatar" />
+            <div class="user__meta">
+              <div class="user__meta__name">이주암</div>
+              <div class="user__meta__account">757301-00-068022</div>
+            </div>
+            <button class="favorite"></button>
+          </li>
+          <li class="user__item">
+            <img src="./images/avatar.svg" alt="avatar" />
+            <div class="user__meta">
+              <div class="user__meta__name">이주암</div>
+              <div class="user__meta__account">757301-00-068022</div>
+            </div>
+            <button class="favorite"></button>
+          </li>
+          <li class="user__item">
+            <img src="./images/avatar.svg" alt="avatar" />
+            <div class="user__meta">
+              <div class="user__meta__name">이주암</div>
+              <div class="user__meta__account">757301-00-068022</div>
+            </div>
+            <button class="favorite"></button>
           </li>
         </ul>
-        <ol>
-          <li class="daily__log">
-            <header class="daily__info">
-              <span class="daily__day">오늘</span>
-              <span class="daily__total">73,000원</span>
-            </header>
-            <ul>
-              <li><span>치킨</span><span>20,000원</span></li>
-              <li><span>피자</span><span>20,000원</span></li>
-              <li><span>택시비</span><span>20,000원</span></li>
-              <li><span>이주암</span><span>20,000원</span></li>
-            </ul>
-          </li>
-          <li class="daily__log">
-            <header class="daily__info">
-              <span class="daily__day">어제</span>
-              <span class="daily__total">173,000원</span>
-            </header>
-            <ul>
-              <li><span>치킨</span><span>20,000원</span></li>
-              <li><span>피자</span><span>20,000원</span></li>
-              <li><span>택시비</span><span>20,000원</span></li>
-              <li><span>이주암</span><span>20,000원</span></li>
-            </ul>
-          </li>
-          <li class="daily__log">
-            <header class="daily__info">
-              <span class="daily__day">2일 전</span>
-              <span class="daily__total">273,000원</span>
-            </header>
-            <ul>
-              <li><span>치킨</span><span>20,000원</span></li>
-              <li><span>피자</span><span>20,000원</span></li>
-              <li><span>택시비</span><span>20,000원</span></li>
-              <li><span>이주암</span><span>20,000원</span></li>
-            </ul>
-          </li>
-        </ol>
-      </section>
+      </div>
       <nav class="nav__bar">
         <a href="javascript:void(0)" class="home"></a>
         <a href="javascript:void(0)" class="arrows"></a>
