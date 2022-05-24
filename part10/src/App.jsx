@@ -1,19 +1,11 @@
 import React, { useRef, useState } from "react";
-import Memoization from "./Memoization";
-import MyFunctionComponent from "./MyFunctionComponent";
-import MyClassComponent from "./MyClassComponent";
 import "./App.css";
+import DayJsExample from "./components/dayjs/DayJsExample";
+import MomentExample from "./components/moment/MomentExample";
+import ReduxCounter from "./components/redux/ReduxCounter";
 
 const App = () => {
-  // return <Memoization />;
-  // return <MyClassComponent />;
-  return <MyFunctionComponent />;
-  // return (
-  //   <>
-  //     <MyClassComponent />
-  //     <MyFunctionComponent />
-  //   </>
-  // );
+  return <ReduxCounter />;
 };
 
 export default App;
