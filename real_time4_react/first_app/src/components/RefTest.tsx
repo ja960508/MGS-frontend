@@ -5,12 +5,22 @@ import React, {
   ChangeEventHandler,
   ChangeEvent,
 } from "react";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  useNavigate,
+  useParams,
+  Link,
+  Navigate,
+} from "react-router-dom";
 
-export const ControlledInputTest = () => {
+const ControlledInputTest = () => {
   const idRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const [id, setId] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [nextPath, setNextPath] = useState<string>("/");
 
   const handleClick = () => {
     const setters = [setId, setPassword];
@@ -29,7 +39,7 @@ export const ControlledInputTest = () => {
     });
 
     if (isValid) {
-      alert(`회원가입 성공!`);
+      setNextPath(`/welcome/${id}`);
     }
   };
 
@@ -87,10 +97,41 @@ export const ControlledInputTest = () => {
           <span>유효하지 않은 password입니다.</span>
         )}
       </div>
-      <button type='button' onClick={handleClick} disabled={checkSubmitable()}>
-        회원가입
-      </button>
+      <Link to={nextPath}>
+        <button
+          type='button'
+          onClick={handleClick}
+          disabled={checkSubmitable()}
+        >
+          회원가입
+        </button>
+      </Link>
     </div>
+  );
+};
+
+const Welcome = () => {
+  const id = useParams().id;
+
+  return (
+    <div>
+      <div>{id}님 안녕하세요~~</div>
+      <Link to='/'>
+        <button>로그아웃</button>
+      </Link>
+    </div>
+  );
+};
+
+export const Main = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<ControlledInputTest />} />
+        <Route path='/welcome/:id' element={<Welcome />} />
+        <Route path='/welcome' element={<Welcome />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
