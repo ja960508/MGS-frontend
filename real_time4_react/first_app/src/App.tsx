@@ -12,9 +12,12 @@ import {
   Link,
   Navigate,
 } from "react-router-dom";
+import KeyframePrac from "./components/C7/KeyframePrac";
+import ContextPrac from "./components/C8/ContextPrac";
+import { ContextFormPrac } from "./components/C8/ContextFormPrac";
 
 const App = () => {
-  return <MainRouterTest />;
+  return <ContextFormPrac />;
 };
 
 export default App;
