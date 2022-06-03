@@ -1,23 +1,57 @@
 import "./App.css";
-import React from "react";
-import RefTest, { Main } from "./components/RefTest";
-import { MainRouterTest } from "./components/RefRouterTest";
-import HooksTest from "./components/C5/HooksTest";
-import RouterExample from "./components/C6/RouterExample";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useParams,
-  Link,
-  Navigate,
-} from "react-router-dom";
-import KeyframePrac from "./components/C7/KeyframePrac";
-import ContextPrac from "./components/C8/ContextPrac";
-import { ContextFormPrac } from "./components/C8/ContextFormPrac";
+import React, { useState, ReactElement, useEffect } from "react";
+import Counter from "./components/C9/ReduxPrac1";
+import { Provider } from "react-redux";
+import store from "./components/C9/ReactReduxStore";
+import ReactReduxExample from "./components/C9/ReactReduxExample";
+
+const Test2 = () => {
+  useEffect(() => {
+    console.log(" Children is Rendered");
+  });
+
+  return <div>Hello World!</div>;
+};
+
+const Test = ({ children }: { children: ReactElement }) => {
+  const [number, setNumber] = useState(0);
+
+  useEffect(() => {
+    console.log("Parent is Rendered");
+  });
+  return (
+    <>
+      <div>Render Props Child</div>
+      {children}
+      <button onClick={() => setNumber((prev) => prev + 1)}>{number}</button>
+    </>
+  );
+};
+
+const TestWithNoChildren = () => {
+  const [number, setNumber] = useState(0);
+
+  useEffect(() => {
+    console.log("Parent is Rendered");
+  });
+  return (
+    <>
+      <div>Render Normal Component</div>
+      <Test2 />
+      <button onClick={() => setNumber((prev) => prev + 1)}>{number}</button>
+    </>
+  );
+};
 
 const App = () => {
-  return <ContextFormPrac />;
+  return (
+    <>
+      <Test>
+        <Test2 />
+      </Test>
+      <TestWithNoChildren />
+    </>
+  );
 };
 
 export default App;
