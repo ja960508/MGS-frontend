@@ -1,10 +1,6 @@
 import React, { useContext, createContext, useState } from "react";
 
-type myContext = {
-  [key: string]: string | React.Dispatch<React.SetStateAction<string>>;
-};
-const defaultName = "asdf";
-const NameContext = createContext<any>({});
+const NameContext = createContext({ text: "", setText: (id: string) => {} });
 
 const Hello1 = () => {
   const contextObj = useContext(NameContext);
