@@ -56,15 +56,21 @@ const AccountLog = ({
   accountData: any;
 }) => {
   const processedLog: any = useMemo(() => processLog(log), [log]);
-  const onDragStart = (e: React.DragEvent<HTMLButtonElement>) => {};
-  const onDrag = (e: React.DragEvent<HTMLButtonElement>) => {};
-  const onDragEnd = (e: React.DragEvent<HTMLButtonElement>) => {};
+  const onDragStart = (e: React.DragEvent<HTMLButtonElement>) => {
+    console.log(e.clientY);
+  };
+  const onDrag = (e: React.DragEvent<HTMLButtonElement>) => {
+    console.log(e.clientY);
+  };
+  const onDragEnd = (e: React.DragEvent<HTMLButtonElement>) => {
+    console.log(e.clientY);
+  };
 
   return (
     <section className='account__log'>
       <button
         className='shutter'
-        draggable='true'
+        draggable={true}
         onDragStart={onDragStart}
         onDrag={onDrag}
         onDragEnd={onDragEnd}

@@ -277,8 +277,8 @@ const data = {
   },
   3: {
     accountName: "집사기",
-    accountNumber: "70-123-4567",
-    accountBalance: "200000",
+    accountNumber: "70-123-asas",
+    accountBalance: "2242424",
     piggyBank: {
       아이패드: {
         plan: "50000",
@@ -303,7 +303,7 @@ const data = {
         income: "out",
         classify: "shopping",
         history: "11번가",
-        price: 70700,
+        price: 7070045,
       },
       {
         date: "2021-09-29",
