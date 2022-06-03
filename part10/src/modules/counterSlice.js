@@ -5,15 +5,19 @@ export const fetchData = createAsyncThunk(
   "counter/fetchData",
   async (value) => {
     console.log(value);
-    const response = await axios.get(
-      "https://jsonplaceholder.typicode.com/todos/"
-    );
+    try {
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/tdos/"
+      );
 
-    return response.data;
+      return response.data;
+    } catch (e) {
+      console.log(e);
+    }
   }
 );
 
-export const counterSlice = createSlice({
+const counterSlice = createSlice({
   name: "counter",
   initialState: { value: 0, data: [], posts: [], status: "" },
   reducers: {
@@ -31,6 +35,10 @@ export const counterSlice = createSlice({
     [fetchData.fulfilled]: (state, action) => {
       state.status = "good";
       state.data = action.payload;
+    },
+    [fetchData.rejected]: (state, action) => {
+      state.status = "bad";
+      state.data = "no";
     },
   },
 });
