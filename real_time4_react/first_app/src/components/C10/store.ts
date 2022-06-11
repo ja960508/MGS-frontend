@@ -1,3 +1,11 @@
+import {
+  deleteItemInLocalStorage,
+  setItemInLocalStorage,
+  getItemInLocalStorage,
+  deleteItemInSessionStorage,
+  setItemInSessionStorage,
+  getItemInSessionStorage,
+} from "./storage";
 import { applyMiddleware } from "redux";
 import { createStore, combineReducers } from "redux";
 import { otherMiddleware, someMiddleware, thunkMiddlewere } from "./middleware";
@@ -21,9 +29,9 @@ const getCookie = (targetKey: string) => {
     .map((item) => item.split("="));
   let result = null;
 
-  result = currentCookies.find((item) => item[0] === targetKey);
+  result = currentCookies.find((item) => item[0] === targetKey)?.[1] || "";
 
-  return result ? result[1] : result;
+  return result;
 };
 
 const setCookie = (key: string, value: string) => {
@@ -40,7 +48,7 @@ const deleteCookie = (key: string) => {
 };
 
 const AUTH_INITIAL_STATE = () => ({
-  user: getCookie("user"),
+  user: getItemInSessionStorage("user"),
   loading: false,
   error: null,
 });
@@ -50,12 +58,12 @@ const authReducer = (state = AUTH_INITIAL_STATE(), action: any) => {
     case "LOGIN_START":
       return { ...state, loading: true };
     case "LOGIN_SUCCESS":
-      setCookie("user", action.payload);
+      setItemInSessionStorage("user", action.payload);
       return { ...state, user: action.payload, loading: false };
     case "LOGIN_FAILED":
       return { ...state, loading: false, error: action.payload };
     case "LOGOUT":
-      deleteCookie("user");
+      deleteItemInSessionStorage("user");
       return AUTH_INITIAL_STATE();
     default:
       return state;
